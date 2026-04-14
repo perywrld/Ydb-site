@@ -2,17 +2,17 @@ import "./index.css";
 
 export default function App() {
   const products = [
-    { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
-    { id: 2, name: "YDB Tee", price: "$40", img: "https://via.placeholder.com/300" },
-    { id: 3, name: "YDB Cap", price: "$25", img: "https://via.placeholder.com/300" },
-  ];
+  { id: 1, name: "YDB OUTSIDER HOODIE", price: "$40", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" },
+  { id: 2, name: "YDB MISFIT TEE", price: "$25", img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" },
+  { id: 3, name: "YDB REBEL CAP", price: "$15", img: "https://images.unsplash.com/photo-1514996937319-344454492b37" },
+];
 
   return (
     <div className="app">
       {/* HERO */}
       <section className="hero">
-        <h1>YOU DON’T BELONG</h1>
-        <p>Made for the misfits.</p>
+        <h1>YDB</h1>
+        <p>You Don’t Belong.</p>
         <button>Shop Now</button>
       </section>
 
@@ -34,8 +34,8 @@ export default function App() {
       <section className="about">
         <h2>About</h2>
         <p>
-          YDB is for those who never fit in. The outsiders. The rule breakers.
-          The ones who move different. You don’t belong — and that’s your power.
+          YDB is a streetwear brand for outsiders, rebels, and misfits.
+          If you’ve ever felt different, this is for you.
         </p>
       </section>
 
@@ -60,8 +60,8 @@ export default function App() {
       <footer>
         <p>© 2026 YDB</p>
         <div>
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
+          <a href="https://instagram.com/ydb.wears">Instagram</a>
+<a href="https://tiktok.com/@ydb.wears">TikTok</a>
         </div>
       </footer>
     </div>
