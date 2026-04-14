@@ -25,6 +25,9 @@ export default function App() {
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
+              <a href="https://paystack.shop/pay/mst2rykug8" target="_blank">
+  <button>Buy Now</button>
+</a>
             </div>
           ))}
         </div>
