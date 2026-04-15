@@ -3,8 +3,8 @@ import "./index.css";
 export default function App() {
   const products = [
   { id: 1, name: "YDB OUTSIDER HOODIE", price: "$40", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" },
-  { id: 2, name: "YDB YOU DONT BELONG TEE", price: "$25", img: "/tee.png" },
-  { id: 3, name: "YDB CLASSC TEE", price: "$30", img: "/teee.png" },
+  { id: 2, name: "YDB YOU DONT BELONG TEE", price: "$25", img: "/tee.png.jpeg" },
+  { id: 3, name: "YDB CLASSC TEE", price: "$30", img: "/teee.png.jpeg" },
 ];
 
   return (
