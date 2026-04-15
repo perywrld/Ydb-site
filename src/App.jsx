@@ -7,7 +7,16 @@ export default function App() {
   ];
 
   return (
-    <div className="app">
+    <div className="app"><nav className="navbar">
+  <h2>YDB</h2>
+
+  <div className="links">
+    <a href="#home">Home</a>
+    <a href="#shop">Catalog</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
       {/* HERO */}
       <section className="hero">
