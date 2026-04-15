@@ -3,7 +3,9 @@ import "./index.css";
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const products = [
+  const total = cart.reduce((acc, item) => {
+  return acc + parseInt(item.price.replace("$", ""));
+}, 0);
   { id: 1, name: "YDB OUTSIDER HOODIE", price: "$40", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" },
   { id: 2, name: "YDB YOU DONT BELONG TEE", price: "$25", img: "/tee.png.jpeg" },
   { id: 3, name: "YDB CLASSC TEE", price: "$30", img: "/teee.png.jpeg" },
@@ -19,6 +21,25 @@ export default function App() {
       </section>
 
       {/* SHOP */}
+      <section className="cart">
+  <h2>Your Cart</h2>
+
+  {cart.length === 0 ? (
+    <p>Cart is empty</p>
+  ) : (
+    <>
+      {cart.map((item, index) => (
+        <div key={index}>
+          <p>{item.name} - {item.price}</p>
+        </div>
+      ))}
+    </>
+  )}
+  <h3>Total: ${total}</h3>
+  <a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
+  <button>Checkout</button>
+</a>
+</section>
       <section className="shop">
         <h2>Shop</h2>
         <div className="products">
