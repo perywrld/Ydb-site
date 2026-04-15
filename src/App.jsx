@@ -66,4 +66,6 @@ export default function App() {
       </footer>
     </div>
   );
-}
+}<a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
+  <button>Buy Now</button>
+</a>
