@@ -61,12 +61,18 @@ export default function App() {
 
       {/* FOOTER */}
       <footer>
-        <p>© 2026 YDB</p>
-        <div>
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
-        </div>
-      </footer>
+  <p>© 2026 YDB</p>
+
+  <div className="socials">
+    <a href="https://instagram.com/ydbwears" target="_blank">
+      Instagram
+    </a>
+
+    <a href="https://tiktok.com/@ydb.wears" target="_blank">
+      TikTok
+    </a>
+  </div>
+</footer>
 
     </div>
   );
