@@ -1,75 +1,69 @@
-import { useState } from "react";
 import "./index.css";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
-
   const products = [
-    { id: 1, name: "YDB YOU DONT BELONG TEE", price: "$40", img: "/tee.png.jpeg" },
-    { id: 2, name: "YDB CLASSIC TEE", price: "$25", img: "/teee.png.jpeg" },
+    { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
+    { id: 2, name: "YDB Tee", price: "$40", img: "https://via.placeholder.com/300" },
+    { id: 3, name: "YDB Cap", price: "$25", img: "https://via.placeholder.com/300" },
   ];
 
   return (
     <div className="app">
-
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <h2>YDB</h2>
-        <div className="links">
-          <a href="#shop">Catalog</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
       {/* HERO */}
       <section className="hero">
-        <h1>YDB</h1>
-        <p>You Don’t Belong.</p>
+        <h1>YOU DON’T BELONG</h1>
+        <p>Made for the misfits.</p>
+        <button>Shop Now</button>
       </section>
 
       {/* SHOP */}
-      <section id="shop" className="shop">
-        <h2>Catalog</h2>
-
-        <div className="grid">
+      <section className="shop">
+        <h2>Shop</h2>
+        <div className="products">
           {products.map((item) => (
             <div key={item.id} className="card">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
-
-              <button onClick={() => setCart([...cart, item])}>
-                Add to Cart
-              </button>
             </div>
           ))}
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="about">
+      <section className="about">
+        <h2>About</h2>
         <p>
-          YDB is built for outsiders. The ones who never fit in,
-          never followed rules, and never needed approval.
+          YDB is for those who never fit in. The outsiders. The rule breakers.
+          The ones who move different. You don’t belong — and that’s your power.
         </p>
       </section>
 
+      {/* LOOKBOOK */}
+      <section className="lookbook">
+        <h2>Lookbook</h2>
+        <div className="gallery">
+          <img src="https://via.placeholder.com/300" alt="look1" />
+          <img src="https://via.placeholder.com/300" alt="look2" />
+          <img src="https://via.placeholder.com/300" alt="look3" />
+        </div>
+      </section>
+
+      {/* EMAIL SIGNUP */}
+      <section className="signup">
+        <h2>Join the Movement</h2>
+        <input type="email" placeholder="Enter your email" />
+        <button>Sign Up</button>
+      </section>
+
       {/* FOOTER */}
-      <footer id="contact">
+      <footer>
         <p>© 2026 YDB</p>
-
-        <div className="socials">
-          <a href="https://instagram.com/ydbwears" target="_blank">
-            Instagram
-          </a>
-
-          <a href="https://tiktok.com/@ydb.wears" target="_blank">
-            TikTok
-          </a>
+        <div>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
         </div>
       </footer>
-
     </div>
   );
 }
