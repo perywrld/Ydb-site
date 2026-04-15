@@ -1,66 +1,72 @@
-import { useState } from "react";
 import "./index.css";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
-
   const products = [
     { id: 1, name: "YDB OUTSIDER HOODIE", price: "$80", img: "/hoodie.png" },
     { id: 2, name: "YDB MISFIT TEE", price: "$40", img: "/tee.png" },
   ];
 
-  const total = cart.reduce((acc, item) => {
-    return acc + parseInt(item.price.replace("$", ""));
-  }, 0);
-
   return (
     <div className="app">
-      
+
       {/* HERO */}
       <section className="hero">
         <h1>YDB</h1>
         <p>You Don’t Belong.</p>
+        <button>Shop Now</button>
       </section>
 
-      {/* PRODUCTS */}
+      {/* SHOP */}
       <section className="shop">
         <h2>Shop</h2>
 
-        <div className="grid">
+        <div className="products">
           {products.map((item) => (
             <div key={item.id} className="card">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
 
-              <button onClick={() => setCart([...cart, item])}>
-                Add to Cart
-              </button>
+              <button>Buy Now</button>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CART */}
-      <section className="cart">
-        <h2>Your Cart</h2>
-
-        {cart.length === 0 ? (
-          <p>Cart is empty</p>
-        ) : (
-          <>
-            {cart.map((item, index) => (
-              <p key={index}>
-                {item.name} - {item.price}
-              </p>
-            ))}
-
-            <h3>Total: ${total}</h3>
-
-            <button>Checkout</button>
-          </>
-        )}
+      {/* ABOUT */}
+      <section className="about">
+        <h2>About</h2>
+        <p>
+          YDB is built for outsiders. The ones who never fit in,
+          never followed rules, and never needed approval.
+          You don’t belong — and that’s your power.
+        </p>
       </section>
+
+      {/* LOOKBOOK */}
+      <section className="lookbook">
+        <h2>Lookbook</h2>
+        <div className="gallery">
+          <img src="/model1.png" alt="look1" />
+          <img src="/model2.png" alt="look2" />
+        </div>
+      </section>
+
+      {/* SIGNUP */}
+      <section className="signup">
+        <h2>Join the Movement</h2>
+        <input type="email" placeholder="Enter your email" />
+        <button>Sign Up</button>
+      </section>
+
+      {/* FOOTER */}
+      <footer>
+        <p>© 2026 YDB</p>
+        <div>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+        </div>
+      </footer>
 
     </div>
   );
