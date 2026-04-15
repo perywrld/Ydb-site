@@ -48,6 +48,7 @@ export default function App() {
           misfits, and those who move different.
         </p>
       </section>
+      
 
       {/* FOOTER */}
       <footer id="contact">
