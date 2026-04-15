@@ -3,8 +3,8 @@ import "./index.css";
 export default function App() {
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
-    { id: 2, name: "YDB Tee", price: "$40", img: "https://via.placeholder.com/300" },
-    { id: 3, name: "YDB Cap", price: "$25", img: "https://via.placeholder.com/300" },
+    { id: 2, name: "YDB  YOU DONT BELONG TEE", price: "$40", img: "/tee.png.jpeg" },
+    { id: 3, name: "YDB Classic TEE", price: "$40", img: "/teee.png.jpeg" },
   ];
 
   return (
@@ -60,8 +60,8 @@ export default function App() {
       <footer>
         <p>© 2026 YDB</p>
         <div>
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
+          <a href="https://instagram.com/ydbwears">Instagram</a>
+<a href="https://tiktok.com/@ydb.wears">TikTok</a>
         </div>
       </footer>
     </div>
