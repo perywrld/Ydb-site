@@ -33,12 +33,14 @@ export default function App() {
           <p>{item.name} - {item.price}</p>
         </div>
       ))}
+
+      <h3>Total: ${total}</h3>
+
+      <a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
+        <button>Checkout</button>
+      </a>
     </>
   )}
-  <h3>Total: ${total}</h3>
-  <a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
-  <button>Checkout</button>
-</a>
 </section>
       <section className="shop">
         <h2>Shop</h2>
