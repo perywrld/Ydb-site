@@ -3,7 +3,7 @@ import "./index.css";
 export default function App() {
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
-    { id: 2, name: "YDB  YOU DONT BELONG TEE", price: "$40", img: "/tee.png.jpeg" },
+    { id: 2, name: "YDB  YOU DONT BELONG TEE", price: "$25", img: "/tee.png.jpeg" },
     { id: 3, name: "YDB Classic TEE", price: "$40", img: "/teee.png.jpeg" },
   ];
 
