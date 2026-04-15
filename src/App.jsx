@@ -24,7 +24,9 @@ export default function App() {
             <div key={item.id} className="card">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
-              <p>{item.price}</p>
+              <a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
+  <button>Buy Now</button>
+</a>
             </div>
           ))}
         </div>
@@ -66,6 +68,4 @@ export default function App() {
       </footer>
     </div>
   );
-}<a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
-  <button>Buy Now</button>
-</a>
+}
