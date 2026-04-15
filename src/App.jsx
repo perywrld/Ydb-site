@@ -7,81 +7,52 @@ export default function App() {
   ];
 
   return (
-    <div className="app"><nav className="navbar">
-  <h2>YDB</h2>
+    <div className="app">
 
-  <div className="links">
-    <a href="#home">Home</a>
-    <a href="#shop">Catalog</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <h2>YDB</h2>
+        <div className="links">
+          <a href="#shop">Catalog</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
 
       {/* HERO */}
       <section className="hero">
-        <h1>YDB</h1>
-        <p>You Don’t Belong.</p>
-        <button>Shop Now</button>
+        <h1>YOU DON’T BELONG</h1>
+        <p>For the outsiders.</p>
       </section>
 
       {/* SHOP */}
-      <section className="shop">
-        <h2>Shop</h2>
+      <section id="shop" className="shop">
+        <h2>Catalog</h2>
 
-        <div className="products">
+        <div className="grid">
           {products.map((item) => (
             <div key={item.id} className="card">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
-
-              <button>Buy Now</button>
+              <button>Buy</button>
             </div>
           ))}
         </div>
       </section>
 
       {/* ABOUT */}
-      <section className="about">
-        <h2>About</h2>
+      <section id="about" className="about">
         <p>
-          YDB is built for outsiders. The ones who never fit in,
-          never followed rules, and never needed approval.
-          You don’t belong — and that’s your power.
+          YDB is for those who never fit in. Built for outsiders,
+          misfits, and those who move different.
         </p>
       </section>
 
-      {/* LOOKBOOK */}
-      <section className="lookbook">
-        <h2>Lookbook</h2>
-        <div className="gallery">
-          <img src="/model1.png" alt="look1" />
-          <img src="/model2.png" alt="look2" />
-        </div>
-      </section>
-
-      {/* SIGNUP */}
-      <section className="signup">
-        <h2>Join the Movement</h2>
-        <input type="email" placeholder="Enter your email" />
-        <button>Sign Up</button>
-      </section>
-
       {/* FOOTER */}
-      <footer>
-  <p>© 2026 YDB</p>
-
-  <div className="socials">
-    <a href="https://instagram.com/ydbwears" target="_blank">
-      Instagram
-    </a>
-
-    <a href="https://tiktok.com/@ydb.wears" target="_blank">
-      TikTok
-    </a>
-  </div>
-</footer>
+      <footer id="contact">
+        <p>© 2026 YDB</p>
+      </footer>
 
     </div>
   );
