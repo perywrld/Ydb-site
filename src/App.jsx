@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./index.css";
 
 export default function App() {
+  const [cart, setCart] = useState([]);
   const products = [
   { id: 1, name: "YDB OUTSIDER HOODIE", price: "$40", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" },
   { id: 2, name: "YDB YOU DONT BELONG TEE", price: "$25", img: "/tee.png.jpeg" },
@@ -25,6 +27,9 @@ export default function App() {
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
+              <button onClick={() => setCart([...cart, item])}>
+  Add to Cart
+</button>
               <a href="https://paystack.shop/pay/mst2rykug8" target="_blank">
   <button>Buy Now</button>
 </a>
