@@ -89,4 +89,16 @@ footer {
 footer a {
   margin: 0 10px;
   color: #aaa;
+}.socials {
+  margin-top: 10px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: white;
 }
