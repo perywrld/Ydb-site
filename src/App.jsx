@@ -9,6 +9,15 @@ export default function App() {
 
   return (
     <div className="app">
+<nav className="navbar">
+  <h2>YDB ({cart.length})</h2>
+
+  <div className="links">
+    <a href="#shop">Catalog</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
       {/* HERO */}
       <section className="hero">
         <h1>YOU DON’T BELONG</h1>
