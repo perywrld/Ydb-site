@@ -89,4 +89,16 @@ footer {
 footer a {
   margin: 0 10px;
   color: #aaa;
+}.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+.links a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
 }
