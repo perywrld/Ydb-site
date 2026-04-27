@@ -3,21 +3,12 @@ import "./index.css";
 export default function App() {
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
-    { id: 2, name: "YDB  YOU DONT BELONG TEE", price: "$25", img: "/tee.png.jpeg" },
-    { id: 3, name: "YDB Classic TEE", price: "$40", img: "/teee.png.jpeg" },
+    { id: 2, name: "YDB Classic Tee", price: "$40", img: "https://tee.png.joeg" },
+    { id: 3, name: "YDB: You Dont Belong Tee", price: "$25", img: "https://teee.png.jpeg" },
   ];
 
   return (
     <div className="app">
-<nav className="navbar">
-  <h2>YDB ({cart.length})</h2>
-
-  <div className="links">
-    <a href="#shop">Catalog</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
       {/* HERO */}
       <section className="hero">
         <h1>YOU DON’T BELONG</h1>
@@ -33,9 +24,7 @@ export default function App() {
             <div key={item.id} className="card">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
-              <a href="https://paystack.shop/pay/2loosfbn7v" target="_blank">
-  <button>Buy Now</button>
-</a>
+              <p>{item.price}</p>
             </div>
           ))}
         </div>
@@ -71,8 +60,8 @@ export default function App() {
       <footer>
         <p>© 2026 YDB</p>
         <div>
-          <a href="https://instagram.com/ydbwears">Instagram</a>
-<a href="https://tiktok.com/@ydb.wears">TikTok</a>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
         </div>
       </footer>
     </div>
