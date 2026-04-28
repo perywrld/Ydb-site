@@ -30,10 +30,24 @@ export default function App() {
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
-              
+
               <button onClick={() => setCart([...cart, item])}>
   Add to Cart
 </button>
+<section className="cart">
+  <h2>Cart</h2>
+  {cart.length === 0 ? (
+    <p>Your cart is empty</p>
+  ) : (
+    <>
+      {cart.map((item, index) => (
+        <div key={index}>
+          <p>{item.name} - {item.price}</p>
+        </div>
+      ))}
+    </>
+  )}
+</section>
 
 <a href="https://paystack.shop/pay/mst2rykug8" target="_blank">
   <button>Buy Now</button>
