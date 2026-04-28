@@ -4,10 +4,10 @@ export default function App() {
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
     { id: 2, name: "YDB Classic Tee", price: "$40", img: "/tee.png.jpeg" },
-    { id: 3, name: "YDB: You Dont Belong TEE ", price: "$25", img: "/teee.png.jpeg" },
-    { id: 3, name: "YDB: You ", price: "$25", img: "/teee.png.jpeg" },
-    { id: 3, name: "YDB: Misfit Beanie ", price: "$10", img: "/bean.jpeg" },
-    { id: 3, name: "YDB: You're Unwanted Tee ", price: "$25", img: "/unwantedtee.jpeg" },
+    { id: 4, name: "YDB: You Dont Belong TEE ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 5, name: "YDB: You ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 6, name: "YDB: Misfit Beanie ", price: "$10", img: "/bean.jpeg" },
+    { id: 7, name: "YDB: You're Unwanted Tee ", price: "$25", img: "/unwantedtee.jpeg" },
   ];
 
   return (
@@ -63,8 +63,8 @@ export default function App() {
       <footer>
         <p>© 2026 YDB</p>
         <div>
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
+          <a href="https://instagram.com/ydbwears">Instagram</a>
+<a href="https://tiktok.com/@ydb.wears">TikTok</a>
         </div>
       </footer>
     </div>
