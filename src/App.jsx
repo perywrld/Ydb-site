@@ -1,4 +1,5 @@
 import "./index.css";
+const [menuOpen, setMenuOpen] = useState(false);
 
 export default function App() {
   const products = [
@@ -11,7 +12,18 @@ export default function App() {
   ];
 
   return (
-    <div className="app">
+    <div className="app"><header className="navbar">
+  <button onClick={() => setMenuOpen(true)} className="menu-btn">
+    ☰
+  </button>
+
+  <h2 className="logo">YDB</h2>
+
+  <div className="nav-icons">
+    <span>👤</span>
+    <span>🛍️</span>
+  </div>
+</header>
       {/* HERO */}
       <section className="hero">
         <h1>YOU DON’T BELONG</h1>
