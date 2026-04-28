@@ -3,11 +3,11 @@ import "./index.css";
 export default function App() {
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "https://via.placeholder.com/300" },
-    { id: 2, name: "YDB Classic Tee", price: "$40", img: "https://tee.png.joeg" },
-    { id: 3, name: "YDB: You ", price: "$25", img: "https://teee.png.jpeg" },
-    { id: 3, name: "YDB: You ", price: "$25", img: "https://teee.png.jpeg" },
-    { id: 3, name: "YDB: Misfit Beanie ", price: "$10", img: "https://bean.jpeg" },
-    { id: 3, name: "YDB: You're Unwanted Tee ", price: "$25", img: "https://unwantedtee.jpeg" },
+    { id: 2, name: "YDB Classic Tee", price: "$40", img: "/tee.png.joeg" },
+    { id: 3, name: "YDB: You ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 3, name: "YDB: You ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 3, name: "YDB: Misfit Beanie ", price: "$10", img: "/bean.jpeg" },
+    { id: 3, name: "YDB: You're Unwanted Tee ", price: "$25", img: "/unwantedtee.jpeg" },
   ];
 
   return (
