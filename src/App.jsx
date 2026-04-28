@@ -36,10 +36,11 @@ export default function App() {
       {/* ABOUT */}
       <section className="about">
         <h2>About</h2>
-        <p>
-          YDB is for those who never fit in. The outsiders. The rule breakers.
-          The ones who move different. You don’t belong — and that’s your power.
-        </p>
+<p>
+  YDB is built for outsiders. The ones who never fit in,
+  never followed rules, and never needed approval.
+  You don’t belong — and that’s your power.
+</p>
       </section>
 
       {/* LOOKBOOK */}
