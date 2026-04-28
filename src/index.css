@@ -1,117 +1,92 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
   background: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 40px;
-  border-bottom: 1px solid #222;
-}
-
-.links a {
-  margin-left: 25px;
-  color: #aaa;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.links a:hover {
   color: #fff;
 }
 
 /* HERO */
 .hero {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 40px;
+  align-items: center;
+  gap: 20px;
 }
 
 .hero h1 {
-  font-size: 80px;
-  margin: 0;
-  letter-spacing: -2px;
+  font-size: 3rem;
+  letter-spacing: 3px;
 }
 
-.hero p {
-  color: #aaa;
-  font-size: 18px;
+.hero button {
+  padding: 12px 30px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
 }
 
-/* PRODUCTS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 60px 40px;
-  gap: 40px;
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* SHOP */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
-  background: #0a0a0a;
-  border: 1px solid #111;
-  padding: 20px;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #333;
+  background: #111;
+  padding: 15px;
+  width: 200px;
 }
 
 .card img {
   width: 100%;
-  margin-bottom: 15px;
 }
 
-.card h3 {
-  font-size: 16px;
-  letter-spacing: 1px;
+/* LOOKBOOK */
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.card p {
-  color: #888;
-}
-
-/* BUTTON */
-button {
-  margin-top: 10px;
-  padding: 12px;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  width: 100%;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-
-button:hover {
-  background: #fff;
-  color: #000;
+.gallery img {
+  width: 200px;
 }
 
 /* SIGNUP */
-.signup {
-  padding: 80px 40px;
-  text-align: center;
-  border-top: 1px solid #111;
-}
-
 .signup input {
-  padding: 12px;
-  width: 260px;
-  margin-right: 10px;
-  background: black;
-  border: 1px solid #333;
-  color: white;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .signup button {
-  width: auto;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #aaa;
 }
