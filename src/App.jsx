@@ -63,7 +63,7 @@ export default function App() {
               <span className="tag">New</span>
               <img src={p.image} />
               <div className="line"></div>
-              <p className="name">zttw {p.name}</p>
+              <p className="name">YDB {p.name}</p>
               <p className="price">{p.price}</p>
 
               <button onClick={() => addToCart(p)} className="add">
