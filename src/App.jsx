@@ -1,5 +1,4 @@
 import "./index.css";
-const [menuOpen, setMenuOpen] = useState(false);
 
 export default function App() {
   const products = [
