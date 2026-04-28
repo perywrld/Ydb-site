@@ -23,7 +23,10 @@ export default function App() {
         <p>Made for the misfits.</p>
         <button>Shop Now</button>
       </section>
-
+<header className="navbar">
+  <button onClick={() => setMenuOpen(true)}>☰</button>
+  <h2>YDB</h2>
+</header>
       {/* SHOP */}
       <section className="shop">
         <h2>Shop</h2>
