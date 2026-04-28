@@ -1,111 +1,71 @@
-import { useState } from "react";
-import "./App.css";
+import "./index.css";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
-
   const products = [
-    {
-      id: 1,
-      name: "Misfit Beanie",
-      price: "$15",
-      image: "/bean.jpeg",
-    },
-    {
-      id: 2,
-      name: "You're Unwanted Tee",
-      price: "$30",
-      image: "/unwantedtee.jpeg",
-    },
-    {
-      id: 3,
-      name: "YDB Hoodie",
-      price: "$60",
-      image: "/hood.jpeg",
-    },
-    {
-      id: 4,
-      name: "You Don't Belong TEE",
-      price: "$30",
-      image: "/teee.png.jpeg",
-    },
+    { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
+    { id: 2, name: "YDB Classic Tee", price: "$40", img: "/tee.png.jpeg" },
+    { id: 3, name: "YDB: You Dont Belong TEE ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 3, name: "YDB: You ", price: "$25", img: "/teee.png.jpeg" },
+    { id: 3, name: "YDB: Misfit Beanie ", price: "$10", img: "/bean.jpeg" },
+    { id: 3, name: "YDB: You're Unwanted Tee ", price: "$25", img: "/unwantedtee.jpeg" },
   ];
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
 
   return (
     <div className="app">
-
       {/* HERO */}
       <section className="hero">
-        <div className="overlay">
-          <div className="nav">
-            <span>☰</span>
-            <h1>YDB</h1>
-            <div className="icons">
-              <span>👤</span>
-              <span>🛍️ ({cart.length})</span>
-            </div>
-          </div>
-        </div>
+        <h1>YOU DON’T BELONG</h1>
+        <p>Made for the misfits.</p>
+        <button>Shop Now</button>
       </section>
 
-      {/* LATEST */}
-      <section className="latest">
-        <h2>LATEST</h2>
-        <button className="shop-btn">SHOP NOW →</button>
-
-        <div className="grid">
-          {products.map((p) => (
-            <div key={p.id} className="card">
-              <span className="tag">New</span>
-              <img src={p.image} />
-              <div className="line"></div>
-              <p className="name">YDB {p.name}</p>
-              <p className="price">{p.price}</p>
-
-              <button onClick={() => addToCart(p)} className="add">
-                ADD TO CART
-              </button>
+      {/* SHOP */}
+      <section className="shop">
+        <h2>Shop</h2>
+        <div className="products">
+          {products.map((item) => (
+            <div key={item.id} className="card">
+              <img src={item.img} alt={item.name} />
+              <h3>{item.name}</h3>
+              <p>{item.price}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* NEWSLETTER */}
-      <section className="newsletter">
-        <h2>SIGN UP FOR 10% OFF YOUR FIRST ORDER</h2>
+      {/* ABOUT */}
+      <section className="about">
+        <h2>About</h2>
         <p>
-          Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+          YDB is for those who never fit in. The outsiders. The rule breakers.
+          The ones who move different. You don’t belong — and that’s your power.
         </p>
+      </section>
 
-        <div className="form">
-          <input placeholder="Email" />
-          <button>SIGN UP</button>
+      {/* LOOKBOOK */}
+      <section className="lookbook">
+        <h2>Lookbook</h2>
+        <div className="gallery">
+          <img src="https://via.placeholder.com/300" alt="look1" />
+          <img src="https://via.placeholder.com/300" alt="look2" />
+          <img src="https://via.placeholder.com/300" alt="look3" />
         </div>
       </section>
 
+      {/* EMAIL SIGNUP */}
+      <section className="signup">
+        <h2>Join the Movement</h2>
+        <input type="email" placeholder="Enter your email" />
+        <button>Sign Up</button>
+      </section>
+
       {/* FOOTER */}
-      <footer className="footer">
-        <h3>SOCIALS</h3>
-        <div className="socials">
-          <span>Instagram</span>
-          <span>X</span>
-          <span>TikTok</span>
+      <footer>
+        <p>© 2026 YDB</p>
+        <div>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
         </div>
-
-        <h3>RESOURCES</h3>
-        <ul>
-          <li>FAQ</li>
-          <li>Shipping Policy</li>
-          <li>Privacy Policy</li>
-          <li>Refund Policy</li>
-          <li>Terms of Service</li>
-        </ul>
-
-        <p className="copyright">© YDB 2026</p>
       </footer>
     </div>
   );
