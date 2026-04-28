@@ -12,7 +12,8 @@ export default function App() {
   ];
 
   return (
-    <div className="app"><header className="navbar">
+    <div className="app">
+      <header className="navbar">
   <button onClick={() => setMenuOpen(true)} className="menu-btn">
     ☰
   </button>
