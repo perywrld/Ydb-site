@@ -3,6 +3,9 @@ import "./index.css";
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  const total = cart.reduce((acc, item) => {
+  return acc + parseInt(item.price.replace("$", ""));
+}, 0);
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
     { id: 2, name: "YDB Classic Tee", price: "$40", img: "/tee.png.jpeg" },
@@ -34,6 +37,7 @@ export default function App() {
               <button onClick={() => setCart([...cart, item])}>
   Add to Cart
 </button>
+<h3>Total: ${total}</h3>
 <section className="cart">
   <h2>Cart</h2>
   {cart.length === 0 ? (
