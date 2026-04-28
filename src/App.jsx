@@ -7,7 +7,7 @@ export default function App() {
   const products = [
     {
       id: 1,
-      name: "Mifit Beanie",
+      name: "Misfit Beanie",
       price: "$15",
       image: "/bean.jpeg",
     },
@@ -19,13 +19,13 @@ export default function App() {
     },
     {
       id: 3,
-      name: "YDB Hoode",
+      name: "YDB Hoodie",
       price: "$60",
       image: "/hood.jpeg",
     },
     {
       id: 4,
-      name: "You Dont Belong TEE",
+      name: "You Don't Belong TEE",
       price: "$30",
       image: "/teee.png.jpeg",
     },
