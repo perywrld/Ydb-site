@@ -7,27 +7,27 @@ export default function App() {
   const products = [
     {
       id: 1,
-      name: "green haze tracksuit",
-      price: "₦375,000",
-      image: "https://picsum.photos/400?1",
+      name: "Mifit Beanie",
+      price: "$15",
+      image: "/bean.jpeg",
     },
     {
       id: 2,
-      name: "green haze trackpants",
-      price: "₦375,000",
-      image: "https://picsum.photos/400?2",
+      name: "You're Unwanted Tee",
+      price: "$30",
+      image: "/unwantedtee.jpeg",
     },
     {
       id: 3,
-      name: "midnight coach jacket",
-      price: "₦420,000",
-      image: "https://picsum.photos/400?3",
+      name: "YDB Hoode",
+      price: "$60",
+      image: "/hood.jpeg",
     },
     {
       id: 4,
-      name: "logo sweat shorts",
-      price: "₦225,000",
-      image: "https://picsum.photos/400?4",
+      name: "You Dont Belong TEE",
+      price: "$30",
+      image: "/teee.png.jpeg",
     },
   ];
 
