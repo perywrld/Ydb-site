@@ -15,8 +15,9 @@ export default function App() {
     { id: 7, name: "YDB: You're Unwanted Tee ", price: "$25", img: "/unwantedtee.jpeg" },
   ];
 
-  return (
+  return ( 
     <div className="app">
+      
       {/* HERO */}
       <section className="hero">
         <h1>YOU DON’T BELONG</h1>
@@ -25,7 +26,7 @@ export default function App() {
       </section>
 <header className="navbar">
   <button onClick={() => setMenuOpen(true)}>☰</button>
-  <h2>YDB</h2>
+  <h1>YDB</h1>
 </header>
       {/* SHOP */}
       <section className="shop">
