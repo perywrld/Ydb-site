@@ -22,11 +22,35 @@ export default function App() {
       setCart([...cart, { ...product, qty: 1 }]);
     }
   };
+  const [email, setEmail] = useState("");
+  <input 
+  type="email" 
+  placeholder="Email Address"
+  onChange={(e) => setEmail(e.target.value)}
+/>
 
   // ✅ TOTAL
   const total = cart.reduce((acc, item) => {
     return acc + parseInt(item.price.replace("$", "")) * item.qty;
   }, 0);
+  const payWithPaystack = () => {
+  const handler = window.PaystackPop.setup({
+    key: "YOUR_PUBLIC_KEY", // from Paystack dashboard
+    email: email,
+    amount: total * 100, // VERY IMPORTANT (Paystack uses kobo)
+    currency: "NGN",
+
+    callback: function (response) {
+      alert("Payment successful!");
+    },
+
+    onClose: function () {
+      alert("Transaction was not completed.");
+    }
+  });
+
+  handler.openIframe();
+};
 
   const products = [
     { id: 1, name: "YDB Hoodie", price: "₦57,000.00.", img: "/hood.jpeg" },
@@ -200,7 +224,9 @@ export default function App() {
       <button
   className="checkout-btn"
   onClick={() => {
-    window.location.href = "https://paystack.shop/pay/mst2rykug8";
+<button className="checkout-btn" onClick={payWithPaystack}>
+  PAY ₦{total.toLocaleString()}
+</button>
   }}
 >
   PAY ₦{total.toLocaleString()}
