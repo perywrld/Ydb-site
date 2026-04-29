@@ -4,6 +4,7 @@ import "./index.css";
 export default function App() {
   const [cart, setCart] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   const total = cart.reduce((acc, item) => {
     return acc + parseInt(item.price.replace("$", ""));
@@ -23,9 +24,15 @@ export default function App() {
 
       {/* NAVBAR */}
       <header className="navbar">
-        <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-        <h1>YDB</h1>
-      </header>
+  <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+
+  <h1>YDB</h1>
+
+  <div className="cart-icon" onClick={() => setCartOpen(true)}>
+    🛍️
+    <span className="cart-count">{cart.length}</span>
+  </div>
+</header>
       {/* SIDE MENU */}
 <div className={`side-menu ${menuOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setMenuOpen(false)}>✕</button>
@@ -120,6 +127,47 @@ export default function App() {
         <input type="email" placeholder="Enter your email" />
         <button>Sign Up</button>
       </section>
+
+      {/* CART DRAWER */}
+<div className={`cart-drawer ${cartOpen ? "open" : ""}`}>
+  <div className="cart-header">
+    <h2>Your Cart ({cart.length})</h2>
+    <button onClick={() => setCartOpen(false)}>✕</button>
+  </div>
+
+  <div className="cart-items">
+    {cart.length === 0 ? (
+      <p>Your cart is empty</p>
+    ) : (
+      cart.map((item, index) => (
+        <div key={index} className="cart-item">
+          <img src={item.img} alt={item.name} />
+          <div>
+            <p>{item.name}</p>
+            <span>{item.price}</span>
+          </div>
+
+          <button onClick={() => {
+            const updated = cart.filter((_, i) => i !== index);
+            setCart(updated);
+          }}>
+            ✕
+          </button>
+        </div>
+      ))
+    )}
+  </div>
+
+  {cart.length > 0 && (
+    <div className="cart-footer">
+      <h3>Total: ${total}</h3>
+
+      <a href="https://paystack.shop/pay/mst2rykug8" target="_blank" rel="noreferrer">
+        <button className="checkout-btn">CHECKOUT</button>
+      </a>
+    </div>
+  )}
+</div>
 
       {/* FOOTER */}
       <footer>
