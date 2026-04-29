@@ -35,7 +35,9 @@ export default function App() {
   <a href="#lookbook" onClick={() => setMenuOpen(false)}>Gallery</a>
   <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
 </div>
-
+{menuOpen && (
+  <div className="overlay" onClick={() => setMenuOpen(false)}></div>
+)}
       {/* HERO */}
       <section className="hero">
         <h1>YOU DON’T BELONG</h1>
