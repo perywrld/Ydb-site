@@ -29,12 +29,12 @@ export default function App() {
   }, 0);
 
   const products = [
-    { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
-    { id: 2, name: "YDB Classic Tee", price: "$40", img: "/tee.png.jpeg" },
-    { id: 4, name: "YDB: You Dont Belong TEE", price: "$25", img: "/teee.png.jpeg" },
-    { id: 5, name: "YDB: You", price: "$25", img: "/teee.png.jpeg" },
-    { id: 6, name: "YDB: Misfit Beanie", price: "$10", img: "/bean.jpeg" },
-    { id: 7, name: "YDB: You're Unwanted Tee", price: "$25", img: "/unwantedtee.jpeg" },
+    { id: 1, name: "YDB Hoodie", price: "₦57,000.00.", img: "/hood.jpeg" },
+    { id: 2, name: "YDB Classic Tee", price: "₦35,000.00.", img: "/tee.png.jpeg" },
+    { id: 4, name: "YDB: You Dont Belong TEE", price: "₦22,000.00.", img: "/teee.png.jpeg" },
+    { id: 5, name: "YDB: Plain Black Stoned Denim", price: "₦50,000.00.", img: "/teee.png.jpeg" },
+    { id: 6, name: "YDB: Misfit Beanie", price: "₦9,000.00.", img: "/bean.jpeg" },
+    { id: 7, name: "YDB: You're Unwanted Tee", price: "₦25,000.00.", img: "/unwantedtee.jpeg" },
   ];
 
   return (
