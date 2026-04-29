@@ -2,13 +2,25 @@ import { useState } from "react";
 import "./index.css";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
+  const addToCart = (product) => {
+  const existing = cart.find((item) => item.id === product.id);
+
+  if (existing) {
+    setCart(cart.map((item) =>
+      item.id === product.id
+        ? { ...item, qty: item.qty + 1 }
+        : item
+    ));
+  } else {
+    setCart([...cart, { ...product, qty: 1 }]);
+  }
+};
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
   const total = cart.reduce((acc, item) => {
-    return acc + parseInt(item.price.replace("$", ""));
-  }, 0);
+  return acc + parseInt(item.price.replace("$", "")) * item.qty;
+}, 0);
 
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
@@ -70,7 +82,7 @@ export default function App() {
               <h3>{item.name}</h3>
               <p>{item.price}</p>
 
-              <button onClick={() => setCart([...cart, item])}>
+              <button onClick={() => addtocart([item])}>
                 Add to Cart
               </button>
             </div>
@@ -135,36 +147,58 @@ export default function App() {
     <button onClick={() => setCartOpen(false)}>✕</button>
   </div>
 
-  <div className="cart-items">
-    {cart.length === 0 ? (
-      <p>Your cart is empty</p>
-    ) : (
-      cart.map((item, index) => (
-        <div key={index} className="cart-item">
-          <img src={item.img} alt={item.name} />
-          <div>
-            <p>{item.name}</p>
-            <span>{item.price}</span>
-          </div>
+<div className="cart-items">
+  {cart.length === 0 ? (
+    <p>Your cart is empty</p>
+  ) : (
+    cart.map((item) => (
+      <div key={item.id} className="cart-item">
+        <img src={item.img} alt={item.name} />
 
-          <button onClick={() => {
-            const updated = cart.filter((_, i) => i !== index);
-            setCart(updated);
-          }}>
-            ✕
-          </button>
+        <div className="cart-info">
+          <p>{item.name}</p>
+          <span>{item.price}</span>
+
+          <div className="qty">
+            <button onClick={() => {
+              if (item.qty === 1) {
+                setCart(cart.filter(i => i.id !== item.id));
+              } else {
+                setCart(cart.map(i =>
+                  i.id === item.id ? { ...i, qty: i.qty - 1 } : i
+                ));
+              }
+            }}>-</button>
+
+            <span>{item.qty}</span>
+
+            <button onClick={() => {
+              setCart(cart.map(i =>
+                i.id === item.id ? { ...i, qty: i.qty + 1 } : i
+              ));
+            }}>+</button>
+          </div>
         </div>
-      ))
-    )}
-  </div>
+      </div>
+    ))
+  )}
+</div>
 
   {cart.length > 0 && (
     <div className="cart-footer">
       <h3>Total: ${total}</h3>
-
-      <a href="https://paystack.shop/pay/mst2rykug8" target="_blank" rel="noreferrer">
-        <button className="checkout-btn">CHECKOUT</button>
-      </a>
+<div className="checkout-form">
+  <input type="text" placeholder="Full Name" />
+  <input type="email" placeholder="Email Address" />
+</div>
+      <button
+  className="checkout-btn"
+  onClick={() => {
+    window.location.href = "https://paystack.shop/pay/mst2rykug8";
+  }}
+>
+  PAY ₦{total.toLocaleString()}
+</button>
     </div>
   )}
 </div>
