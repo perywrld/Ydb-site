@@ -98,4 +98,85 @@ footer a {
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 900;
+}/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  background: transparent;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  transition: 0.3s ease;
+  z-index: 1001;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* IMPROVE PRODUCTS (grid instead of flex) */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* PRODUCT CARD UPGRADE */
+.card {
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* HERO BUTTON HOVER */
+.hero button:hover {
+  background: #ddd;
 }
