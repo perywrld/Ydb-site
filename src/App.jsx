@@ -40,13 +40,17 @@ export default function App() {
 )}
       {/* HERO */}
       <section className="hero">
-        <h1>YOU DON’T BELONG</h1>
-        <p>Made for the misfits.</p>
+  <div className="hero-overlay"></div>
 
-        <a href="#shop">
-          <button>Shop Now</button>
-        </a>
-      </section>
+  <div className="hero-content">
+    <h1>YOU DON’T BELONG</h1>
+    <p>For the outsiders.</p>
+
+    <a href="#shop">
+      <button className="hero-btn">SHOP NOW</button>
+    </a>
+  </div>
+</section>
 
       {/* SHOP */}
       <section id="shop" className="shop">
