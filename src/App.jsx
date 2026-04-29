@@ -26,6 +26,15 @@ export default function App() {
         <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         <h1>YDB</h1>
       </header>
+      {/* SIDE MENU */}
+<div className={`side-menu ${menuOpen ? "open" : ""}`}>
+  <button className="close-btn" onClick={() => setMenuOpen(false)}>✕</button>
+
+  <a href="#shop" onClick={() => setMenuOpen(false)}>Shop</a>
+  <a href="#shop" onClick={() => setMenuOpen(false)}>All Products</a>
+  <a href="#lookbook" onClick={() => setMenuOpen(false)}>Gallery</a>
+  <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+</div>
 
       {/* HERO */}
       <section className="hero">
@@ -80,7 +89,7 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section className="about">
+      <section id="about" className="about">
         <h2>About</h2>
         <p>
           YDB is built for outsiders. The ones who never fit in,
@@ -90,7 +99,7 @@ export default function App() {
       </section>
 
       {/* LOOKBOOK */}
-      <section className="lookbook">
+      <section id="lookbook" className="lookbook">
         <h2>Lookbook</h2>
         <div className="gallery">
           <img src="https://via.placeholder.com/300" alt="look1" />
