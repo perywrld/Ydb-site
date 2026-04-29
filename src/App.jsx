@@ -2,25 +2,31 @@ import { useState } from "react";
 import "./index.css";
 
 export default function App() {
-  const addToCart = (product) => {
-  const existing = cart.find((item) => item.id === product.id);
 
-  if (existing) {
-    setCart(cart.map((item) =>
-      item.id === product.id
-        ? { ...item, qty: item.qty + 1 }
-        : item
-    ));
-  } else {
-    setCart([...cart, { ...product, qty: 1 }]);
-  }
-};
+  // ✅ STATE FIRST
+  const [cart, setCart] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
+  // ✅ ADD TO CART FUNCTION
+  const addToCart = (product) => {
+    const existing = cart.find((item) => item.id === product.id);
+
+    if (existing) {
+      setCart(cart.map((item) =>
+        item.id === product.id
+          ? { ...item, qty: item.qty + 1 }
+          : item
+      ));
+    } else {
+      setCart([...cart, { ...product, qty: 1 }]);
+    }
+  };
+
+  // ✅ TOTAL
   const total = cart.reduce((acc, item) => {
-  return acc + parseInt(item.price.replace("$", "")) * item.qty;
-}, 0);
+    return acc + parseInt(item.price.replace("$", "")) * item.qty;
+  }, 0);
 
   const products = [
     { id: 1, name: "YDB Hoodie", price: "$80", img: "/hood.jpeg" },
@@ -82,7 +88,7 @@ export default function App() {
               <h3>{item.name}</h3>
               <p>{item.price}</p>
 
-              <button onClick={() => addtocart([item])}>
+              <button onClick={() => addToCart(item)}>
                 Add to Cart
               </button>
             </div>
@@ -104,7 +110,7 @@ export default function App() {
               </div>
             ))}
 
-            <h3>Total: ${total}</h3>
+            <h3>Total: ₦{total.toLocaleString()}</h3>
 
             <a href="https://paystack.shop/pay/mst2rykug8" target="_blank" rel="noreferrer">
               <button>Buy Now</button>

@@ -1,17 +1,39 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
+/* BODY */
 body {
   background: #000;
   color: #fff;
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* HERO (luxury style) */
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -49,9 +71,12 @@ body {
   color: black;
   border: none;
   font-weight: bold;
-  letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #ddd;
 }
 
 /* SECTIONS */
@@ -60,25 +85,85 @@ section {
   text-align: center;
 }
 
-/* SHOP */
-.products {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(20px);
+  padding: 80px 25px;
+  transition: 0.4s ease;
+  z-index: 1001;
 }
 
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu a {
+  display: block;
+  margin: 20px 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* PRODUCTS (GRID ONLY) */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding-top: 20px;
+}
+
+/* CARD */
 .card {
-  background: #111;
-  padding: 15px;
-  width: 200px;
+  background: transparent;
+  text-align: left;
 }
 
 .card img {
   width: 100%;
 }
 
-/* LOOKBOOK */
+.card h3 {
+  margin-top: 10px;
+}
+
+.card p {
+  color: #aaa;
+}
+
+.card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: white;
+  color: black;
+}
+
+/* GALLERY */
 .gallery {
   display: flex;
   gap: 10px;
@@ -111,120 +196,6 @@ footer a {
   margin: 0 10px;
   color: #aaa;
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 900;
-}/* NAVBAR */
-/* NAVBAR (floating luxury) */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1000;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-}
-
-.navbar button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* SIDE MENU (premium feel) */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 280px;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  backdrop-filter: blur(20px);
-  padding: 80px 25px;
-  transition: 0.4s ease;
-  z-index: 1001;
-}
-
-.side-menu.open {
-  left: 0;
-}
-
-.side-menu a {
-  display: block;
-  margin: 20px 0;
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: white;
-  text-decoration: none;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* IMPROVE PRODUCTS (grid instead of flex) */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  padding-top: 20px;
-}
-
-/* PRODUCT CARD UPGRADE */
-.card {
-  background: transparent;
-  text-align: left;
-}
-
-.card img {
-  width: 100%;
-}
-
-.card h3 {
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-.card p {
-  color: #aaa;
-}
-
-.card button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid white;
-  background: none;
-  color: white;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: white;
-  color: black;
-}
-
-/* HERO BUTTON HOVER */
-.hero-btn:hover {
-  background: #ddd;
-}
 
 /* OVERLAY */
 .overlay {
@@ -235,15 +206,10 @@ footer a {
   z-index: 900;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* CART ICON */
 .cart-icon {
   position: relative;
   cursor: pointer;
-  font-size: 20px;
 }
 
 .cart-count {
@@ -265,7 +231,6 @@ html {
   width: 100%;
   height: 80%;
   background: #000;
-  border-top: 1px solid #222;
   transition: 0.4s ease;
   z-index: 1002;
   display: flex;
@@ -276,14 +241,13 @@ html {
   bottom: 0;
 }
 
-/* HEADER */
+/* CART */
 .cart-header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
 }
 
-/* ITEMS */
 .cart-items {
   flex: 1;
   overflow-y: auto;
@@ -292,7 +256,6 @@ html {
 
 .cart-item {
   display: flex;
-  align-items: center;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -303,31 +266,13 @@ html {
   object-fit: cover;
 }
 
-/* FOOTER */
-.cart-footer {
-  padding: 20px;
-  border-top: 1px solid #222;
-}
-
-.checkout-btn {
-  width: 100%;
-  padding: 15px;
-  background: white;
-  color: black;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-/* CART ITEM */
 .cart-info {
   flex: 1;
 }
 
 .qty {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-top: 5px;
 }
 
 .qty button {
@@ -335,10 +280,9 @@ html {
   color: white;
   border: none;
   padding: 4px 10px;
-  cursor: pointer;
 }
 
-/* FORM */
+/* CHECKOUT */
 .checkout-form {
   padding: 15px 20px;
   display: flex;
@@ -353,7 +297,6 @@ html {
   color: white;
 }
 
-/* BUTTON */
 .checkout-btn {
   width: 100%;
   padding: 16px;
@@ -361,12 +304,14 @@ html {
   color: black;
   border: none;
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-top: 10px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .checkout-btn:hover {
   background: #ddd;
+}
+
+/* SCROLL */
+html {
+  scroll-behavior: smooth;
 }
