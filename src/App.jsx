@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import axios from "axios";
 
 export default function App() {
   // STATE
@@ -7,6 +8,34 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [email, setEmail] = useState("");
+
+const checkout = async () => {
+  if (!email) {
+    alert("Please enter your email");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Your cart is empty");
+    return;
+  }
+
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/create-payment",
+      {
+        cart,
+        email,
+      }
+    );
+
+    window.location.href = response.data.paymentUrl;
+
+  } catch (error) {
+    console.log(error);
+    alert("Payment failed");
+  }
+};
 
   // PRODUCTS (✅ prices are now numbers)
   const products = [
@@ -38,32 +67,7 @@ export default function App() {
   // TOTAL
   const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
 
-  // PAYSTACK
-  const payWithPaystack = () => {
-  if (!email) {
-    alert("Please enter your email");
-    return;
-  }
-
-  const handler = window.PaystackPop.setup({
-    key: "pk_live_d3492d65642a0841c7b8cc1ec659dc24ce31d275",
-    email: email,
-    amount: total * 100,
-    currency: "NGN",
-
-    callback: function (response) {
-      alert("Payment successful!");
-      setCart([]);
-      setCartOpen(false);
-    },
-
-    onClose: function () {
-      alert("Payment cancelled");
-    }
-  });
-
-  handler.openIframe();
-};
+  
 
   return (
     <div className="app">
@@ -199,7 +203,10 @@ export default function App() {
               />
             </div>
 
-            <button className="checkout-btn" onClick={payWithPaystack}>
+            <button
+  className="checkout-btn"
+  onClick={checkout}
+>
               PAY ₦{total.toLocaleString()}
             </button>
           </div>
