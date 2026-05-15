@@ -40,7 +40,7 @@ const checkout = async () => {
   // PRODUCTS (✅ prices are now numbers)
   const products = [
     { id: 1, name: "YDB Hoodie", price: 200, img: "/hood.jpeg" },
-    { id: 2, name: "YDB Classic Tee", price: 35000, img: "/tee.png.jpeg" },
+    { id: 2, name: "YDB Classic Tee", price: 300, img: "/tee.png.jpeg" },
     { id: 3, name: "YDB: You Dont Belong Tee", price: 22000, img: "/teee.png.jpeg" },
     { id: 4, name: "YDB Denim", price: 50000, img: "/teee.png.jpeg" },
     { id: 5, name: "YDB Beanie", price: 9000, img: "/bean.jpeg" },
